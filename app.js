@@ -42,10 +42,14 @@ fs.readdir('./commands/', async (err, files) => {
 		let cmdName = file.split('.')[0];
 		console.log(`Loaded command '${cmdName}'`);
 		client.commands.set(cmdName, props);
-		props.conf.aliases.forEach(alias => {
+		props.help.aliases.forEach(alias => {
 			client.aliases.set(alias, cmdName);
 		});
 	});
+});
+
+process.on('SIGINT', () => {
+	console.log('Bot shutting down...');
 });
 
 process.on('unhandledRejection', (reason, p) => {

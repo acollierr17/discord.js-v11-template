@@ -27,12 +27,9 @@ exports.run = async (client, message, args) => {
     await message.author.send(inviteEmbed);
 };
 
-exports.conf = {
-    aliases: ['bot', 'botinvite']
-};
-
 exports.help = {
     name: 'invite',
+    aliases: ['bot', 'botinvite'],
     description: 'Receive a DM with information on inviting the bot to your server.',
     help: 'invite'
 };

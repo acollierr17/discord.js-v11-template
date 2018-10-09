@@ -22,12 +22,9 @@ exports.run = async (client, message, args) => {
 
 };
 
-exports.conf = {
-    aliases: []
-};
-
 exports.help = {
     name: 'eval',
+    aliases: [],
     description: 'Run raw Javascript code via the bot.',
     usage: 'eval <code>'
 };

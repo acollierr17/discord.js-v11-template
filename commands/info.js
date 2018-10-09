@@ -17,12 +17,9 @@ exports.run = async (client, message, args) => {
     message.channel.send(infoEmbed);
 };
 
-exports.conf = {
-    aliases: ['botinfo']
-};
-
 exports.help = {
     name: 'info',
+    aliases: ['botinfo'],
     description: 'View bot information.',
     usage: 'info'
 };

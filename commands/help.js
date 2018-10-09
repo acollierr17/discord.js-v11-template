@@ -23,12 +23,9 @@ exports.run = async (client, message, args) => {
     message.channel.send(helpEmbed);
 };
 
-exports.conf = {
-    aliases: ['h', 'halp']
-};
-
 exports.help = {
     name: 'help',
+    aliases: ['h', 'halp'],
     description: 'View all commands and where to receive bot support.',
     usage: 'help'
 };
