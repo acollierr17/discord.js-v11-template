@@ -1,0 +1,29 @@
+{
+  "name": "discord.js-template",
+  "version": "1.0.0",
+  "description": "A template for a Discord.js bot created by acollierr17.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [
+    "template",
+    "discord.js",
+    "discord",
+    "bot"
+  ],
+  "author": "acollierr17 <gamemaniac101@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv-flow": "^0.1.0",
+    "enmap": "^4.3.2",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "moment-timezone": "^0.5.21"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1"
+  }
+}
