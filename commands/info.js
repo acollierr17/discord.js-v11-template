@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { orange, discord, owner } = settings;
+const { embedColor, discord, owner } = settings;
 
 exports.run = async (client, message, args) => {
 
@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     const infoEmbed = new RichEmbed()
         .setTitle(client.user.username)
         .setDescription('This bot serves as a template for a Discord.js bot. Feel free to change anything you need!')
-        .setColor(orange)
+        .setColor(embedColor)
         .addField('Bot Author', `<@${owner}>`)
         .addField('Support Discord', discord)
         .setFooter('© 2018 The Nerd Cave');

@@ -16,7 +16,7 @@ settings = {
 	token: process.env.TOKEN,
 	owner: process.env.OWNER,
 	prefix: process.env.PREFIX,
-	orange: process.env.ORANGE,
+	embedColor: process.env.DEFAULT_COLOR,
 	discord: process.env.DISCORD,
 	invite: process.env.INVITE
 };

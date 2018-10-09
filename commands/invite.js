@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { orange, discord, invite } = settings;
+const { embedColor, discord, invite } = settings;
 
 exports.run = async (client, message, args) => {
 
@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
             **Support Server:**
             ${discord}
             `)
-        .setColor(orange)
+        .setColor(embedColor)
         .setTimestamp();
 
     await message.react('📧').then(message.delete(2500));

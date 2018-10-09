@@ -1,4 +1,3 @@
-require('dotenv-flow').config();
 const { prefix } = settings;
 
 module.exports = async client => {

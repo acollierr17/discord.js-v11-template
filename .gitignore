@@ -63,3 +63,4 @@ typings/
 # Other
 data/
 .eslintrc.json
+nodemon.json

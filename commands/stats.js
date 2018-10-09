@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const { orange } = settings;
+const { embedColor } = settings;
 require('moment-duration-format');
 
 exports.run = async (client, message, args) => {
@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
 
     const statsEmbed = new Discord.RichEmbed()
         .setAuthor(client.user.username, client.user.avatarURL)
-        .setColor(orange)
+        .setColor(embedColor)
         .addField('Guilds', guildSize, true)
         .addField('Users', userSize, true)
         .addField('Uptime', botUptime, true)

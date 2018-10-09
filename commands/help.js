@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { owner, prefix, orange, discord } = settings;
+const { owner, prefix, embedColor, discord } = settings;
 
 exports.run = async (client, message, args) => {
 
@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
         .addField('Current Prefix', prefix)
         .addField('Bot Commands', helpCmds.join(' | '))
         .addField('Found an issue?', `Please report any issues to <@${owner}> via the Support Discord: ${discord}.`)
-        .setColor(orange);
+        .setColor(embedColor);
 
     message.channel.send(helpEmbed);
 };
