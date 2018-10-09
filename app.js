@@ -16,8 +16,7 @@ settings = {
 	prefix: process.env.PREFIX,
 	orange: process.env.ORANGE,
 	discord: process.env.DISCORD,
-	invite: process.env.INVITE,
-	ver: process.env.VER
+	invite: process.env.INVITE
 };
 
 client.commands = new Enmap();
