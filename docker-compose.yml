@@ -1,10 +1,8 @@
 version: '3'
 services:
     discord:
-      container_name: template-bot
+      container_name: discordjs-template
       build:
         context: .
         dockerfile: ./Dockerfile
       restart: always
-      environment:
-      - NODE_ENV=production
