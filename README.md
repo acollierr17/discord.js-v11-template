@@ -8,7 +8,7 @@ $ git clone git@github.com:acollierr17/discord.js-template.git # or clone your o
 $ cd discord.js-template
 $ npm install
 ```
-Update `.env.example` with your respective details then remove `.example` from the file. Afterward, start the bot.
+Rename `.env.example` to `.env` and update the file with its respective details. Afterward, start the bot.
 ```bash
 $ npm start
 ```
