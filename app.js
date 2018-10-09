@@ -48,10 +48,6 @@ fs.readdir('./commands/', async (err, files) => {
 	});
 });
 
-process.on('SIGINT', () => {
-	console.log('Bot shutting down...');
-});
-
 process.on('unhandledRejection', (reason, p) => {
 	console.log('Unhandled Rejection at:', p, 'Reason:', reason);
 });

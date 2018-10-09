@@ -63,5 +63,5 @@ typings/
 # Other
 data/
 .eslintrc.json
-./nodemon.json
-./package-lock.json
+package-lock.json
+nodemon.json
