@@ -16,6 +16,12 @@ Your Discord.js bot should now be live! (Check the console if you need to double
 
 ## Deplying to Heroku
 With the included `Procfile` you have the option of deploying the bot to Heroku.
+
+Make sure you have [Heroku CLI](https://cli.heroku.com/) installed before proceeding. You will need to download the Heroku Node.js buildpack first before moving along.
+```bash
+$ heroku create --buildpack https://github.com/heroku/heroku-buildpack-nodejs.git
+```
+Once the buildpack is installed, you may proceed with deployment.
 ```bash
 $ heroku create
 $ git push heroku master
