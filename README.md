@@ -31,4 +31,4 @@ or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-*Credits to [Joma](https://github.com/jomaoppa) for the README template*
+*Credits to [Joma Tech](https://github.com/jomaoppa) for the README template*
