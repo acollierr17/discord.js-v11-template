@@ -3,7 +3,8 @@ if (Number(process.version.slice(1).split(".")[0]) < 8) throw new Error("Node 8.
 const fs = require('fs');
 const Discord = require('discord.js');
 const Enmap = require('enmap');
-require('dotenv-flow').config();
+
+const { token } = require('./config.js');
 
 const client = new Discord.Client({
 	disableEveryone:  true,
@@ -11,15 +12,6 @@ const client = new Discord.Client({
 	messageCacheLifetime: 120,
 	messageSweepInterval: 60
 });
-
-settings = {
-	token: process.env.TOKEN,
-	owner: process.env.OWNER,
-	prefix: process.env.PREFIX,
-	embedColor: process.env.DEFAULT_COLOR,
-	discord: process.env.DISCORD,
-	invite: process.env.INVITE
-};
 
 client.commands = new Enmap();
 client.aliases = new Enmap();
@@ -56,4 +48,4 @@ process.on('unhandledRejection', (reason, p) => {
 	console.log('Unhandled Rejection at:', p, 'Reason:', reason);
 });
 
-client.login(settings.token);
+client.login(token);

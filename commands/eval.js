@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, owner } = settings;
+const { prefix, owner } = require('../config.js');
 
 exports.run = async (client, message, args) => {
 

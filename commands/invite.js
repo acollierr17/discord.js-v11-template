@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { embedColor, discord, invite } = settings;
+const { embedColor, discord, invite } = require('../config.js');
 
 exports.run = async (client, message, args) => {
 

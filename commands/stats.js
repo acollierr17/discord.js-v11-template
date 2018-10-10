@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const { embedColor } = settings;
+const { embedColor } = require('../config.js');
 require('moment-duration-format');
 
 exports.run = async (client, message, args) => {
