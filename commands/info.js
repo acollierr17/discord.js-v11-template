@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
         .setColor(embedColor)
         .addField('Bot Author', `<@${owner}>`)
         .addField('Support Discord', discord)
-        .setFooter('© 2018 The Nerd Cave');
+        .setFooter('© 2018 Nerd Cave Development');
 
     message.channel.send(infoEmbed);
 };
