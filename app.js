@@ -3,6 +3,7 @@ if (Number(process.version.slice(1).split(".")[0]) < 8) throw new Error("Node 8.
 const fs = require('fs');
 const Discord = require('discord.js');
 const Enmap = require('enmap');
+require('dotenv-flow').config();
 
 const client = new Discord.Client({
 	disableEveryone:  true,
@@ -38,8 +39,13 @@ fs.readdir('./commands/', async (err, files) => {
 	});
 });
 
-process.on('SIGINT', () => {
-	console.log('Bot shutting down...');
+process.on('SIGTERM', async () => {
+	await console.info('SIGTERM signal received.');
+	await console.log('Bot shutting down...');
+	await client.destroy(() => {
+		console.log('Bot has shut down.');
+		process.exit(0);
+	});
 });
 
 process.on('unhandledRejection', (reason, p) => {
