@@ -4,8 +4,6 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const Enmap = require('enmap');
 
-const { token } = require('./config.js');
-
 const client = new Discord.Client({
 	disableEveryone:  true,
 	messageCacheMaxSize: 500,
