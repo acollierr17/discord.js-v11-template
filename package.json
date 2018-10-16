@@ -1,6 +1,6 @@
 {
   "name": "discord.js-template",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A template for a Discord.js bot created by acollierr17.",
   "main": "app.js",
   "scripts": {
