@@ -62,6 +62,5 @@ typings/
 
 # Other
 data/
-.eslintrc.json
 package-lock.json
 nodemon.json

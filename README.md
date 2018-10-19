@@ -1,10 +1,15 @@
-# discord.js-template
+# discord.js-template 
+
+[![Join the Discord](https://discordapp.com/api/guilds/480231440932667393/embed.png)](https://discord.gg/g7wr8xb)
+
 A template for a Discord.js bot that includes command and event handlers as well as environment variables and ESLint.
 
+A star is always appreciated if you find this template useful for you!
+
 ## Running Locally
-Make sure you have [Node.js](http://nodejs.org/) installed.
+Make sure you have [Node.js](http://nodejs.org/) installed as well as Git SCM [Windows](https://git-scm.com/download/win) | [Mac](https://git-scm.com/download/mac) | [Linux](https://git-scm.com/download/linux) if you're going to go this route. Otherwise, simply clone the repo or download it and unzip it to a folder on your desktop.
 ```bash
-$ git clone git@github.com:acollierr17/discord.js-template.git # or clone your own fork
+$ git clone git@github.com:acollierr17/discord.js-template.git # or fork
 $ cd discord.js-template
 $ npm install
 ```

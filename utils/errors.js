@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 const colors = {
     red: '#FF4500'
@@ -6,7 +6,7 @@ const colors = {
 
 module.exports.noPerms = (message, perm) => {
 
-    let embed = new Discord.RichEmbed()
+    let embed = new RichEmbed()
         .setTitle('Error')
         .setDescription(message.author + ', you lack certain permissions to do this action.')
         .setColor(colors.red)

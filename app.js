@@ -1,11 +1,11 @@
 if (Number(process.version.slice(1).split(".")[0]) < 8) throw new Error("Node 8.0.0 or higher is required. Update Node on your system.");
 
 const fs = require('fs');
-const Discord = require('discord.js');
+const { Client } = require('discord.js');
 const Enmap = require('enmap');
 require('dotenv-flow').config();
 
-const client = new Discord.Client({
+const client = new Client({
 	disableEveryone:  true,
 	messageCacheMaxSize: 500,
 	messageCacheLifetime: 120,

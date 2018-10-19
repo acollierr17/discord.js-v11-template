@@ -4,8 +4,9 @@
   "description": "A template for a Discord.js bot created by acollierr17.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node .",
+    "test": "eslint .",
+    "lint": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "bugs": {
     "url": "https://github.com/acollierr17/discord.js-template/issues"
   },
+  "homepage": "https://github.com/acollierr17/discord.js-template#README.md",
   "dependencies": {
     "discord.js": "^11.4.2",
     "dotenv-flow": "^0.1.0",
@@ -31,6 +33,7 @@
     "moment-timezone": "^0.5.21"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.6.1"
   }
 }

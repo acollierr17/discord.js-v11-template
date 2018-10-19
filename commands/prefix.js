@@ -1,4 +1,4 @@
-const { prefix } = require('../config.js');
+const { prefix } = require('../config');
 
 exports.run = async (client, message, args) => {
 
