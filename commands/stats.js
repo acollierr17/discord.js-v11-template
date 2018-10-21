@@ -1,6 +1,7 @@
 const { RichEmbed, version: discordVersion } = require('discord.js');
 const moment = require('moment');
 const { embedColor } = require('../config');
+const { version } = require('../package.json');
 require('moment-duration-format');
 
 exports.run = async (client, message, args) => {
@@ -22,6 +23,7 @@ exports.run = async (client, message, args) => {
         .addField('Memory', `${Math.round(memUsage)} MB`, true)
         .addField('Discord.js', `v${discordVersion}`, true)
         .addField('Node', `${process.version}`, true)
+        .setFooter(`Bot Version: v${version}`)
         .setTimestamp();
 
     message.channel.send(statsEmbed);

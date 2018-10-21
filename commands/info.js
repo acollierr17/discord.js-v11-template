@@ -1,5 +1,6 @@
 const { RichEmbed } = require('discord.js');
 const { embedColor, discord, owner } = require('../config');
+const { version } = require('../package.json');
 
 exports.run = async (client, message, args) => {
 
@@ -12,6 +13,7 @@ exports.run = async (client, message, args) => {
         .setColor(embedColor)
         .addField('Bot Author', `<@${owner}>`)
         .addField('Support Discord', discord)
+        .addField('Bot Version', version)
         .setFooter('© 2018 Nerd Cave Development');
 
     message.channel.send(infoEmbed);
