@@ -7,6 +7,24 @@ exports.run = async (client, message, args) => {
     if (!perms.has('EMBED_LINKS')) return message.channel.send('I can\'t embed links! Make sure I have this permission: `Embed Links`').then(msg => msg.delete(5000));
 
     let cmds = Array.from(client.commands.keys());
+    let cmd = args[0];
+
+    if (cmd) {
+        if (!cmds.includes(cmd)) return;
+
+        let cmdObj = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+        let cmdHelp = cmdObj.help;
+
+        let cmdHelpEmbed = new RichEmbed()
+            .setTitle(`${cmdHelp.name} | Help Information`)
+            .setDescription(cmdHelp.description)
+            .addField('Usage', `\`${cmdHelp.usage}\``, true)
+            .setColor(embedColor);
+
+        if (cmdHelp.aliases.length) cmdHelpEmbed.addField('Aliases', `\`${cmdHelp.aliases.join(', ')}\``, true);
+
+        return message.channel.send(cmdHelpEmbed);
+    }
 
     const helpCmds = cmds.map(cmd => {
         return '`' + cmd + '`';

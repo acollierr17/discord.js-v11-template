@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node .",
     "test": "eslint .",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "prod": "SET NODE_ENV=production&&npm start",
+    "dev": "SET NODE_ENV=development&&nodemon"
   },
   "repository": {
     "type": "git",
