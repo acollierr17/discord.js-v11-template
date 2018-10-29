@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     if (message.author.id !== owner) return;
 
     let cmdName = client.commands.get('eval', 'help.name');
-    let cmdUsage = client.commmands.get('eval', 'help.usage');
+    let cmdUsage = client.commands.get('eval', 'help.usage');
 
     try {
         const code = args.join(' ');
