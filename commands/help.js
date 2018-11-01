@@ -1,18 +1,21 @@
 const { RichEmbed } = require('discord.js');
 const { owner, prefix, embedColor, discord } = require('../config');
+const { noBotPerms } = require('../utils/errors');
 
 exports.run = async (client, message, args) => {
 
     let perms = message.guild.me.permissions;
-    if (!perms.has('EMBED_LINKS')) return message.channel.send('I can\'t embed links! Make sure I have this permission: `Embed Links`').then(msg => msg.delete(5000));
+    if (!perms.has('EMBED_LINKS')) return noBotPerms(message, 'EMBED_LINKS');
 
     let cmds = Array.from(client.commands.keys());
     let cmd = args[0];
 
+    let cmdName = client.commands.get('help', 'help.name');
+
     if (cmd) {
-        if (!cmds.includes(cmd)) return;
 
         let cmdObj = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+        if (!cmdObj) return;
         let cmdHelp = cmdObj.help;
 
         let cmdHelpEmbed = new RichEmbed()
@@ -32,7 +35,7 @@ exports.run = async (client, message, args) => {
 
     const helpEmbed = new RichEmbed()
         .setTitle('Help Information')
-        .setDescription(`View help information for ${client.user}.`)
+        .setDescription(`View help information for ${client.user}. \n (Do \`${prefix + cmdName} <command>\` for specific help information).`)
         .addField('Current Prefix', prefix)
         .addField('Bot Commands', helpCmds.join(' | '))
         .addField('Found an issue?', `Please report any issues to <@${owner}> via the Support Discord: ${discord}.`)

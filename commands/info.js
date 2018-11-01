@@ -1,11 +1,12 @@
 const { RichEmbed } = require('discord.js');
 const { embedColor, discord, owner } = require('../config');
 const { version } = require('../package.json');
+const { noBotPerms } = require('../utils/errors');
 
 exports.run = async (client, message, args) => {
 
     let perms = message.guild.me.permissions;
-    if (!perms.has('EMBED_LINKS')) return message.channel.send('I can\'t embed links! Make sure I have this permission: `Embed Links`').then(msg => msg.delete(5000));
+    if (!perms.has('EMBED_LINKS')) return noBotPerms(message, 'EMBED_LINKS');
 
     const infoEmbed = new RichEmbed()
         .setTitle(client.user.username)

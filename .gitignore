@@ -64,3 +64,4 @@ typings/
 data/
 package-lock.json
 nodemon.json
+commands/beta.js
