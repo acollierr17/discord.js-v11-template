@@ -25,7 +25,10 @@ exports.run = async (client, message, args) => {
         .setTimestamp();
 
     await message.react('📧').then(message.delete(2500));
-    await message.author.send(inviteEmbed);
+    await message.author.send(inviteEmbed).catch(err => {
+        client.logger.error(err);
+        return message.reply('you have DMs disabled! I could not send you the invite link. Enable them to receive the bot invite link.');
+    });
 };
 
 exports.help = {

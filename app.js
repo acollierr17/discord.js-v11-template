@@ -3,6 +3,7 @@ if (Number(process.version.slice(1).split(".")[0]) < 8) throw new Error("Node 8.
 const fs = require('fs');
 const { Client } = require('discord.js');
 const Enmap = require('enmap');
+const { stripIndents } = require('common-tags');
 require('dotenv-flow').config();
 
 const client = new Client({
@@ -15,23 +16,25 @@ const client = new Client({
 client.commands = new Enmap();
 client.aliases = new Enmap();
 
+client.logger = require('./utils/logger');
+
 fs.readdir('./events/', async (err, files) => {
-	if (err) return console.error(err);
+	if (err) return client.logger.error(err);
 	files.forEach(file => {
 		const evt = require(`./events/${file}`);
 		let evtName = file.split('.')[0];
-		console.log(`Loaded event '${evtName}'`);
+		client.logger.log(`Loaded event '${evtName}'`);
 		client.on(evtName, evt.bind(null, client));
 	});
 });
 
 fs.readdir('./commands/', async (err, files) => {
-	if (err) return console.error(err);
+	if (err) return client.logger.error(err);
 	files.forEach(file => {
 		if (!file.endsWith('.js')) return;
 		let props = require(`./commands/${file}`);
 		let cmdName = file.split('.')[0];
-		console.log(`Loaded command '${cmdName}'`);
+		client.logger.log(`Loaded command '${cmdName}'`);
 		client.commands.set(cmdName, props);
 		props.help.aliases.forEach(alias => {
 			client.aliases.set(alias, cmdName);
@@ -40,16 +43,16 @@ fs.readdir('./commands/', async (err, files) => {
 });
 
 process.on('SIGTERM', async () => {
-	await console.info('SIGTERM signal received.');
-	await console.log('Bot shutting down...');
+	await client.logger.log('SIGTERM signal received.');
+	await client.logger.log('Bot shutting down...');
 	await client.destroy(() => {
-		console.log('Bot has shut down.');
+		client.logger.log('Bot has shut down.');
 		process.exit(0);
 	});
 });
 
-process.on('unhandledRejection', (reason, p) => {
-	console.log('Unhandled Rejection at:', p, 'Reason:', reason);
+process.on('unhandledRejection', error => {
+	client.logger.log(stripIndents`Unhandled Rejection: ${error}`);
 });
 
 client.login();

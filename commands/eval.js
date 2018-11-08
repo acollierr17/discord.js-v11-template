@@ -4,12 +4,11 @@ exports.run = async (client, message, args) => {
 
     if (message.author.id !== owner) return;
 
-    let cmdName = client.commands.get('eval', 'help.name');
     let cmdUsage = client.commands.get('eval', 'help.usage');
 
     try {
         const code = args.join(' ');
-        if (!code) return message.channel.send(`Usage: \`${prefix + cmdName} ${cmdUsage}\``).then(msg => msg.delete(3000)).catch(err => console.log(err));
+        if (!code) return message.channel.send(`Usage: \`${prefix + cmdUsage}\``).then(msg => msg.delete(3000)).catch(err => client.logger.error(err));
         let evaled = eval(code);
 
         if (typeof evaled !== 'string') evaled = require('util').inspect(evaled);
