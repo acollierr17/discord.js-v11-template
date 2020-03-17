@@ -11,18 +11,10 @@ exports.run = async (client, message, args) => {
     const inviteEmbed = new RichEmbed()
         .setAuthor('Bot Invite Information', client.user.avatarURL)
         .setDescription('Bot Invite Information', client.user.avatarURL)
-        .setDescription(`Hello ${message.author},
-        
-            **Before inviting, you need** \`MANAGE SERVER\` **or** \`ADMINISTRATOR\` **permissions to add bots to a server.** 
-            
-            **Bot Invite:**
-            ${invite}
-
-            **Support Server:**
-            ${discord}
-            `)
+        .setDescription(`Hello ${message.author}, **Before inviting. \n You need** \`MANAGE SERVER\` **OR** \`ADMINISTRATOR\` \n **Permissions to add bots to a server.** \n [**ADD TO SERVER**](${invite}) | [**SUPPORT SERVER**](${discord})`)
         .setColor(embedColor)
         .setTimestamp();
+  
 
     await message.react('📧').then(message.delete(2500));
     await message.author.send(inviteEmbed).catch(err => {
